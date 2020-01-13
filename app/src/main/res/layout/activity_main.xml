@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,95 +7,105 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
     <!-- INFOS DO PLAYER 1 -->
 
-    <TextView
-        android:id="@+id/contadorVida_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="30sp"
-        android:text="20" />
+    <RelativeLayout
+        android:id="@+id/blocoSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:rotation="180">
 
-    <LinearLayout
-        android:id="@id/contadorVida_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_marginTop="55dp">
-
-        <Button
-            android:id="@+id/botaoMenosVida_btn"
+        <TextView
+            android:id="@+id/contadorVida_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="15sp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="30sp"
+            android:text="20" />
 
-        <Button
-            android:id="@+id/botaoResetarVida_btn"
+        <LinearLayout
+            android:id="@id/contadorVida_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resetar"
-            android:textSize="15sp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="55dp">
 
-        <Button
-            android:id="@+id/botaoMaisVida_btn"
+            <Button
+                android:id="@+id/botaoMenosVida_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="25sp"
+                android:background="@drawable/button_bg_round"/>
+
+            <Button
+                android:id="@+id/botaoResetarVida_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resetar"
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/botaoMaisVida_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/contadorVitoria_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="15sp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:textSize="25sp"
+            android:text="0" />
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/contadorVitoria_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:textSize="25sp"
-        android:text="0" />
-
-    <LinearLayout
-        android:id="@id/contadorVitoria_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_marginTop="130dp">
-
-        <Button
-            android:id="@+id/botaoMenosVitoria_btn"
+        <LinearLayout
+            android:id="@id/contadorVitoria_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="15sp"/>
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="130dp">
 
-        <Button
-            android:id="@+id/botaoResetarVitoria_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resetar"
-            android:textSize="15sp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+            <Button
+                android:id="@+id/botaoMenosVitoria_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="15sp"/>
 
-        <Button
-            android:id="@+id/botaoMaisVitoria_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="15sp"/>
+            <Button
+                android:id="@+id/botaoResetarVitoria_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resetar"
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/botaoMaisVitoria_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="15sp"/>
 
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
     <!-- LINHA DO MEIO (DIVISÓRIA) -->
@@ -103,60 +113,66 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="190dp"
+        android:layout_centerVertical="true"
         android:background="@android:color/darker_gray"/>
 
 
     <!-- INFOS DO PLAYER 2 -->
 
-    <TextView
-        android:id="@+id/contadorVida_jogador2_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
-        android:textSize="30sp"
-        android:text="20" />
+    <RelativeLayout
+        android:id="@+id/blocoInferior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".5">
 
-    <LinearLayout
-        android:id="@id/contadorVida_jogador2_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:layout_marginTop="245dp">
-
-        <Button
-            android:id="@+id/botaoMenosVida_jogador2_btn"
+        <TextView
+            android:id="@+id/contadorVida_jogador2_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-"
-            android:textSize="15sp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="30sp"
+            android:text="20" />
 
-        <Button
-            android:id="@+id/botaoResetarVida_jogador2_btn"
+        <LinearLayout
+            android:id="@id/contadorVida_jogador2_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resetar"
-            android:textSize="15sp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"/>
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_marginTop="55dp">
 
-        <Button
-            android:id="@+id/botaoMaisVida_jogador2_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textSize="15sp"/>
+            <Button
+                android:id="@+id/botaoMenosVida_jogador2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="15sp"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/botaoResetarVida_jogador2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resetar"
+                android:textSize="15sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <Button
+                android:id="@+id/botaoMaisVida_jogador2_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/contadorVitoria_jogador2_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="100dp"
             android:textSize="25sp"
             android:text="0" />
 
@@ -166,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal"
-            android:layout_marginTop="320dp">
+            android:layout_marginTop="130dp">
 
             <Button
                 android:id="@+id/botaoMenosVitoria_jogador2_btn"
@@ -193,4 +209,6 @@
 
         </LinearLayout>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
